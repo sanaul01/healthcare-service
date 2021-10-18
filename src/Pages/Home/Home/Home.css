@@ -1,0 +1,8 @@
+.home-page{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.services{
+    background-repeat: no-repeat;
+}
