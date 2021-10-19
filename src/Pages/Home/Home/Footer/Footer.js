@@ -3,7 +3,7 @@ import './Footer.css'
 
 const Footer = () => {
     return (
-        <div className="main-footer bg-dark text-light">
+        <div className="main-footer bg-dark text-light py-5">
             <div className="container">
                 <div className="row">
                     {/* Comlumn-1  */}
@@ -49,7 +49,7 @@ const Footer = () => {
                 </div>
                 {/* Footer Bottom */}
                 <div className="footer-bottom">
-                    <p className="text-xs-center">
+                    <p className="text-xs-center text-center">
                         &copy;{new Date().getFullYear()} City Guide App - All Rights Reserved
                     </p>
                 </div>

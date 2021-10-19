@@ -7,3 +7,10 @@
 .services{
     background-repeat: no-repeat;
 }
+
+@media only screen and (max-width: 688px) {
+    .home-page{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+}
