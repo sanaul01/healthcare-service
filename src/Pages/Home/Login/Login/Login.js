@@ -20,6 +20,7 @@ const Login = () => {
     const [error, setError] = useState('');
     const [isLogin, setIsLogin] = useState(false)
 
+    // Toggle Login ====
     const toggleLogin = e =>{
         setIsLogin(e.target.checked)
     }
@@ -39,7 +40,7 @@ const Login = () => {
         }
         isLogin? processLogin(email, password) : creatNewUser(email, password);
     }
-
+    //  =============LOgin porcess============== 
     const processLogin= (email, password) =>{
         signInWithEmailAndPassword(auth, email, password)
         .then(result =>{
@@ -51,7 +52,7 @@ const Login = () => {
             setError(error.message)
         })
     };
-
+    //=========== Creat new user =========
     const creatNewUser = (email, password)=>{
         createUserWithEmailAndPassword(auth, email, password)
     .then(result =>{
@@ -64,14 +65,21 @@ const Login = () => {
         setError(error.message)
     })
     }
-
+    // ================= Verify Email ============
     const verifyEmail = () =>{
         sendEmailVerification(auth.currentUser)
         .then(result =>{
             console.log(result)
         })
     }
+    
+    //========== Reset Password ==========
+    const handleResetPassword = () =>{
+        sendPasswordResetEmail(auth, email)
+        .then(result =>{
 
+        })
+    }
 
 
         // Google sign in prossess 
@@ -82,12 +90,7 @@ const Login = () => {
         })
     }
 
-    const handleResetPassword = () =>{
-        sendPasswordResetEmail(auth, email)
-        .then(result =>{
-
-        })
-    }
+    
  
 
 
