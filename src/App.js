@@ -8,10 +8,11 @@ import Home from './Pages/Home/Home/Home';
 import Detail from './Pages/Home/Home/Details/Detail';
 import Login from './Pages/Home/Login/Login/Login';
 import AuthProvider from './Contexts/AuthProvider';
+import PrivateRoute from './Pages/Home/Login/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
-    <div className="App">
+    <div className="">
       
       <AuthProvider>
       <Router>
@@ -26,9 +27,9 @@ function App() {
           <Route path="/login">
             <Login></Login>
           </Route>
-          <Route path ="/detail/:servicId">
+          <PrivateRoute path ="/detail/:servicId">
             <Detail></Detail>
-          </Route>
+          </PrivateRoute>
         </Switch>
         <Footer></Footer>
       </Router>
