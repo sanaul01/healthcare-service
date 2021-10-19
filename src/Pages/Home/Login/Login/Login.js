@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../../hooks/useAuth';
 
 const Login = () => {
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/home'
 
-    const [userEmail, setUserEmail] = useState('');
-    const [userPassword, setUserPassword] = useState('');
+    const [email, setUserEmail] = useState('');
+    const [password, setUserPassword] = useState('');
 
     const handleEmailChange = e =>{
         setUserEmail(e.target.value)
@@ -15,11 +19,18 @@ const Login = () => {
     }
 
     const handleRegistration = e =>{
-        console.log(userEmail, userPassword);
+        console.log(email, password);
         e.preventDefault();
     }
 
     const {signInUsingGoogle} = useAuth();
+
+    const handleGoogleLogin = () =>{
+        signInUsingGoogle()
+        .then(result =>{
+            history.push(redirect_uri)
+        })
+    }
 
     return (
         <div className="login-form">
@@ -47,7 +58,7 @@ const Login = () => {
             </div>
             {/* Google sign in prossess */}
             <h2>Please login</h2>
-            <button onClick={signInUsingGoogle} className="btn btn-primary">Google sign in</button>
+            <button onClick={handleGoogleLogin} className="btn btn-primary">Google sign in</button>
         </div>
     );
 };
