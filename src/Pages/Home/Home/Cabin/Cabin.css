@@ -1,8 +1,5 @@
-.service{
+.cabin-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 25px;
-}
-.container{
-    margin-bottom: 25px;
 }

@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Header from './Pages/Home/Home/Header/Header';
@@ -9,6 +9,8 @@ import Detail from './Pages/Home/Home/Details/Detail';
 import Login from './Pages/Home/Login/Login/Login';
 import AuthProvider from './Contexts/AuthProvider';
 import PrivateRoute from './Pages/Home/Login/PrivateRoute/PrivateRoute';
+import NotFound from './Pages/Home/Home/NotFound/NotFound';
+import Cabin from './Pages/Home/Home/Cabin/Cabin';
 
 function App() {
   return (
@@ -24,12 +26,18 @@ function App() {
           <Route path="/home">
             <Home></Home>
           </Route>
+          <Route path="/cabin">
+            <Cabin></Cabin>
+          </Route>
           <Route path="/login">
             <Login></Login>
           </Route>
           <PrivateRoute path ="/detail/:servicId">
             <Detail></Detail>
           </PrivateRoute>
+          <Route path="*">
+            <NotFound></NotFound>
+          </Route>
         </Switch>
         <Footer></Footer>
       </Router>

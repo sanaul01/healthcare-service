@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Banner from '../Banner/Banner';
 import Service from '../Service/Service';
 import './services.css'
 
@@ -70,13 +71,15 @@ const Services = () => {
         .then(data => setServices(data))
     }, [])
     return (
-        <div className="service">
+        <div className="container">
+            <div className="service">
             {
                 services.map(service =><Service
                 key ={service.id}
                 service={service}
                 ></Service>)
             }
+            </div>
         </div>
     );
 };
