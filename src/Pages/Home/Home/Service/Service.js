@@ -7,8 +7,8 @@ const Service = ({service}) => {
     return (
         <div className="single-container">
             <img className="image w-100" src={image} alt="" />
-            <h2>{name}</h2>
-            <h3>{services}</h3>
+            <h4>{name}</h4>
+            <h4>{services} hours</h4>
             <p>{description}</p>
             <Link to={`/detail/${id}`}>
             <button className="btn btn-warning">detail {name}</button>

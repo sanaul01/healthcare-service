@@ -12,9 +12,9 @@ const Cabin = () => {
         .then(data => setCabins(data))
     }, [])
     return (
-        <div className="container my-3">
-            <h2 className="text-center my-5">Our Cabins</h2>
-            <div className="cabin-container">
+        <div className="container md-3">
+            <h2 className="text-center cabin-title">Our Cabins</h2>
+            <div className="cabin-container my-3">
                 {
                     cabins.map(cabin => <Cabins
                     key={cabin.id}

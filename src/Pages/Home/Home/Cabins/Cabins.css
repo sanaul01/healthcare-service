@@ -2,3 +2,9 @@
     height: 200px;
     border-radius: 10px;
 }
+.single-cabin{
+    background-color: rgb(126, 236, 112);
+    padding: 5px;
+    border-radius: 10px;
+    color: black;
+}
