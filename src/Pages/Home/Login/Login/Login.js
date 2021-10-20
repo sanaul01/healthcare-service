@@ -77,7 +77,7 @@ const Login = () => {
     const handleResetPassword = () =>{
         sendPasswordResetEmail(auth, email)
         .then(result =>{
-
+                console.log(result)
         })
     }
 
